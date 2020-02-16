@@ -27,13 +27,14 @@ export class GetApiDataService {
 
   private transformToITVProgramDetails(data: IapiData): ItvProgramDetails{
     return{
-      //programUrl: data.show.url,
+      programId: data.id,
+      programUrl: `${environment.baseURL}tvmaze.com/shows/${data.id}/${data.name}`,
       programName: data.name,
       programLanguage: data.language,
       telecastTime: data.schedule.time,
-      //telecastDays: data.schedule.days,
-      //networkName: data.network.name,
-      //programImage: data.image.medium,
+      telecastDays: data.schedule.days,
+      networkName: data.network.name,
+      programImage: `${environment.baseURL}static.tvmaze.com/uploads/images/medium_portrait/${environment.imageCode}.jpg`,
       programSummary: data.summary,
 
     }

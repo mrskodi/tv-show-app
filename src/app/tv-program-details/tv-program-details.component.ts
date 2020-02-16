@@ -10,12 +10,16 @@ import { GetApiDataService } from '../get-api-data.service';
 })
 export class TvProgramDetailsComponent implements OnInit {
   program: ItvProgramDetails
-  constructor(private get_api_data: GetApiDataService) {
-    
-   }
+
+  constructor(private get_api_data: GetApiDataService) { }
 
   ngOnInit(): void {
-    this.get_api_data.getProgramDetails('girls').subscribe(data => this.program = data);
+    this.get_api_data.getProgramDetails('girls').subscribe(data => {
+      console.log(data);
+      this.program = data
+      console.log(this.program);
+    });
+    
+    console.log(this.program);
   }
-
 }

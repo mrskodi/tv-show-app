@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   appId: '994c45c2b144f5f9495cc489cad08b90',
-  baseURL: 'http://'
+  baseURL: 'http://',
+  imageCode: '31/78286'
 };
 
 /*
