@@ -1,9 +1,8 @@
 <div>
   <div>
     <h2>
-      Details about the show <a href="{{program?.programUrl}}">{{program?.programName}}</a> below:
+      Name: {{program?.programName}}
       <br>
-      
     </h2>
   </div>
 
@@ -13,16 +12,18 @@
     <br>
     <span>Telecasted on: {{program?.networkName}} every  {{program?.telecastDays}} @ {{program?.telecastTime}} hrs</span>
   </div>
-
+  <br>
   <div style="font-weight: bold; font-size: 20px;">
-    <div>
+    <div>  
       <img src={{program?.programImage}}>
     </div>
+    <br>
     <div>
-      <span id="summary">Summary here!</span>
+      <span>{{program?.programSummary}}</span>
     </div>
+    <br>
     <div> 
-      For more details, <a href="{{program?.programUrl}}">click here...</a>
+      For more details about the show, <a href="{{program?.programUrl}}">click here...</a>
     </div>
   </div>
 </div>
