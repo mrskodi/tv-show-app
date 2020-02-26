@@ -1,30 +1,63 @@
-<div>
+<div *ngFor='let programDetails of programList'>
+  
   <div>
-    <h2>
-      Name: {{program?.programName}}
+    <h2 style="font-weight: bold;">
+      {{programDetails.programName}}
       <br>
     </h2>
   </div>
 
   <div style="font-weight: bold; font-size: 20px;">
-    <span>Language: {{program?.programLanguage}}</span>
+    <span>Language:{{programDetails.programLanguage}}</span>
     <br>
     <br>
-    <span>Telecasted on: {{program?.networkName}} every  {{program?.telecastDays}} @ {{program?.telecastTime}} hrs</span>
+    <span>Telecasted on:{{programDetails.networkName}} Telecasted days:{{programDetails.telecastDays}} @ {{programDetails.telecastTime}} hrs</span>
+    <br>
+    <br>
+    <span>Telecasted on:{{programDetails.webChannelName}} </span>
+    
+    <br>
   </div>
   <br>
   <div style="font-weight: bold; font-size: 20px;">
     <div>  
-      <img src={{program?.programImage}}>
+      <img [src]='programDetails.programImage' width="60px">
     </div>
     <br>
     <div>
-      <span>{{program?.programSummary}}</span>
+      <span id="summary">{{programDetails.summary}}</span>
     </div>
     <br>
     <div> 
-      For more details about the show, <a href="{{program?.programUrl}}">click here...</a>
+      For more details about the show, <a href="{{programDetails.programUrl}}">click here...</a>
     </div>
   </div>
+  <hr>
 </div>
 
+<!--
+  <table mat-table [dataSource]='programList'>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let programDetails"> {{programDetails.programName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="language">
+      <mat-header-cell *matHeaderCellDef>Language</mat-header-cell>
+      <mat-cell *matCellDef="let programDetails"> {{programDetails.programLanguage}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+      <mat-cell *matCellDef="let programDetails"> {{programDetails.programImage}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="summary">
+      <mat-header-cell *matHeaderCellDef>Summary</mat-header-cell>
+      <mat-cell *matCellDef="let programDetails"> {{programDetails.programSummary}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>
+-->

@@ -1,0 +1,5 @@
+<form>
+  <input style="text-align: center;" mat-input type="text" placeholder="Enter Program name" arai-label="Program Name" [formControl]="search"/>
+  <mat-icon matSuffix>search</mat-icon>
+  <mat-error *ngIf='search.invalid'>Type a valid program name</mat-error>
+</form>
