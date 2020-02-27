@@ -37,7 +37,7 @@ import { ProgramSearchComponent } from './program-search/program-search.componen
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [GetApiDataService],
   bootstrap: [AppComponent]

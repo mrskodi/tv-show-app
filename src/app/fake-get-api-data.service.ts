@@ -15,8 +15,9 @@ export class FakeGetApiDataService implements IGetdataService {
 	  programLanguage: 'English',
 	  telecastTime: 2200,
 	  telecastDays: ['Monday'],
-    networkName: 'HBO', 
-    webChannelName: '',
+    //networkName: 'HBO', 
+    //webChannelName: '',
+    telecastedOn: 'HBO',
 	  programImage: 'http://static.tvmaze.com/uploads/images/medium_portrait/191/478580.jpg',
 	  programSummary: "<p><b>Gentleman Jack</b> is a remarkable and unlikely love story set in the complex, changing world of 1832 Halifax - the cradle of the industrial revolution - just as it's all kicking off. The drama will explore Anne Lister's relationships at home with her family, her servants, her tenants and her industrial rivals, who will use any dirty tricks they can to bring her down. At its heart is her relationship with her would-be wife, the wealthy heiress Ann Walker. It has all the warmth, wit, humour and complexity that audiences have come to associate with Sally Wainwright's writing.</p>"
 

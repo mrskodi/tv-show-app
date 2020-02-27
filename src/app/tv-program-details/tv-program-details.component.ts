@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { ItvProgramDetails } from '../itv-program-details';
 import { GetApiDataService } from '../get-api-data.service';
 import { IarrayTvprogramDetails } from '../iarray-tvprogram-details';
-
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-tv-program-details',
@@ -11,20 +10,15 @@ import { IarrayTvprogramDetails } from '../iarray-tvprogram-details';
   styleUrls: ['./tv-program-details.component.css']
 })
 export class TvProgramDetailsComponent implements OnInit {
-//  program: ItvProgramDetails;
-  programList: IarrayTvprogramDetails;
-  displayedColumns: string[];
-  
+
+  //programList: IarrayTvprogramDetails;
+  @Input() programList: IarrayTvprogramDetails;
+  //listData: MatTableDataSource<any>;
+  displayedColumns: string[] = ['programName', 'programLanguage', 'programImage', 'telecastedOn', 'telecastDays', 'telecastTime', 'programUrl'];
+
   constructor(private get_api_data: GetApiDataService) { }
 
   ngOnInit(): void {
-    // Call getProgramListDetails (pass the name of program).
-    // Get the data back and subscribe for any changes.
-    //this.displayedColumns = ['programName', 'programLanguage', 'programImage', 'programSummary'];
-    this.get_api_data.getProgramListDetails("sex and the city").subscribe(data => 
-      {
-      this.programList = data;
-      //console.log(this.programList);
-    });
+    //this.listData = new MatTableDataSource(this.programList);
   }
 }

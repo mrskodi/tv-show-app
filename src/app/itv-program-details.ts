@@ -7,7 +7,7 @@ export interface ItvProgramDetails{
 	programLanguage: string,
 	telecastTime: number,
 	telecastDays: string[],
-	networkName: string, 
+	telecastedOn: string, 
 	webChannelName: string,
 	programImage: string,
 	programSummary: string

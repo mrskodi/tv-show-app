@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { GetApiDataService } from '../get-api-data.service';
 import { debounceTime } from 'rxjs/operators';
@@ -9,7 +9,8 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./program-search.component.css']
 })
 export class ProgramSearchComponent implements OnInit {
-  
+  @Output() searchEvent = new EventEmitter<string>();
+
   search = new FormControl('', [Validators.minLength(1)]);
 
   constructor(private getApidataService: GetApiDataService) { }
@@ -17,10 +18,8 @@ export class ProgramSearchComponent implements OnInit {
   ngOnInit(): void {
     this.search.valueChanges.pipe(debounceTime(1300)).subscribe(
       (searchText: string) => {
-        //const userInput = searchText.split(' ').map(value => value.trim());
-        const userInput = searchText.trim();
         if(!(this.search.invalid) && (searchText)){
-          this.getApidataService.getProgramListDetails(userInput).subscribe(data => console.log(data));
+          this.searchEvent.emit(searchText);
         }
       }
     )

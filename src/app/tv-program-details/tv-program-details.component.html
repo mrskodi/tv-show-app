@@ -1,4 +1,4 @@
-<div *ngFor='let programDetails of programList'>
+<!--<div *ngFor='let programDetails of programList'>
   
   <div>
     <h2 style="font-weight: bold;">
@@ -34,30 +34,45 @@
   </div>
   <hr>
 </div>
-
-<!--
-  <table mat-table [dataSource]='programList'>
-    <ng-container matColumnDef="name">
+-->
+<div class="mat-elevation-z5">
+  <table mat-table [dataSource]="programList" width="100%">
+    <ng-container matColumnDef="programName">
       <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-      <mat-cell *matCellDef="let programDetails"> {{programDetails.programName}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.programName}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="language">
+    <ng-container matColumnDef="programLanguage">
       <mat-header-cell *matHeaderCellDef>Language</mat-header-cell>
-      <mat-cell *matCellDef="let programDetails"> {{programDetails.programLanguage}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.programLanguage}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="image">
+    <ng-container matColumnDef="programImage">
       <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
-      <mat-cell *matCellDef="let programDetails"> {{programDetails.programImage}} </mat-cell>
+      <mat-cell *matCellDef="let element"><img [src]='element.programImage' width="60px"/></mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="summary">
-      <mat-header-cell *matHeaderCellDef>Summary</mat-header-cell>
-      <mat-cell *matCellDef="let programDetails"> {{programDetails.programSummary}} </mat-cell>
+    <ng-container matColumnDef="telecastedOn">
+      <mat-header-cell *matHeaderCellDef>Telecasted On</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.telecastedOn}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telecastDays">
+      <mat-header-cell *matHeaderCellDef>Telecast Days</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.telecastDays}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telecastTime">
+      <mat-header-cell *matHeaderCellDef>Telecast Time</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.telecastTime}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="programUrl">
+      <mat-header-cell *matHeaderCellDef>For more info...</mat-header-cell>
+      <mat-cell *matCellDef="let element"> <a href="{{element.programUrl}}">..click here</a> </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </table>
--->
+</div>

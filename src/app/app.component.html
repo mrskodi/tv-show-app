@@ -1,7 +1,7 @@
 <div>
   <title>tv-show-app</title>
   <div style="font-weight: bold; font-size: 20px; text-align: center">
-    <app-program-search></app-program-search>
+    <app-program-search (searchEvent)="doSearch($event)"></app-program-search>
   </div>
   <div>
     <h1>
@@ -9,6 +9,6 @@
     </h1>
   </div>
   <div>
-    <app-tv-program-details></app-tv-program-details>
+    <app-tv-program-details [programList]="displayProgramDetails"></app-tv-program-details>
   </div>
 </div>
